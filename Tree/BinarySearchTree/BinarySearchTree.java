@@ -10,6 +10,7 @@
 // 4. Finding the height of the tree
 // 5. delete(Node node, int key) - Deleting a key from BST
 
+// Skeleton of single node
 class Node
 	{
 		int value;
@@ -22,9 +23,10 @@ class Node
 		}
 }
 
+// Main class - contains all the functionality
 class  BinarySearchTree
 {
-	Node root;
+	Node root;  // root node
 	
 	BinarySearchTree()
 	{
@@ -50,7 +52,7 @@ class  BinarySearchTree
 		return node;
 	}
 	
-	
+	// insert the a new node of value key and return the root
 	Node insert(Node node, int key)
 	{
 		// point to be inserted
@@ -178,6 +180,7 @@ class  BinarySearchTree
 		return node;
 	}
 	
+	// minimum value in a given BST
 	int rightMin(Node node)
 	{
 		int min = node.value;
@@ -189,10 +192,11 @@ class  BinarySearchTree
 		return min;
 	}
 	
+	// Function execution begins here
 	public static void main(String[] args) 
 	{
 		BinarySearchTree bst = new BinarySearchTree();
-		
+		// Inserting set of nodes
 		bst.root = bst.insert(bst.root, 10);
 		bst.root = bst.insert(bst.root, 5);
 		bst.root = bst.insert(bst.root, 20);
@@ -201,7 +205,7 @@ class  BinarySearchTree
 		bst.root = bst.insert(bst.root, 22);
 		
 		
-		
+		// Traversals
 		System.out.println(" In order traversal");
 		bst.inorder(bst.root);
 		System.out.println("\n Preorder traversal");
@@ -209,10 +213,12 @@ class  BinarySearchTree
 		System.out.println("\n Postorder traversal");
 		bst.postorder(bst.root);
 		
+		// Height of the tree
 		System.out.println("\n Height of tree " + bst.height(bst.root));
 		System.out.println("Level order traversal");
 		bst.printLevelOrder(bst.root);
 		
+		// Deleting the node
 		bst.root = bst.delete(bst.root, 10);
 		System.out.println("Level order traversal after deleting 22");
 		bst.printLevelOrder(bst.root);
