@@ -5,14 +5,14 @@
 *************************************************/
 // I  have implemented the below functions of LinkedList
 // 1. Node insertAtBeginning(int value)  - Inserting at the beginning
-// 2. insert(Node node, int key) - Inserting a node in BST
-// 3. Traversals : inorder, preorder, postorder, level order
-// 4. Finding the height of the tree
-// 5. delete(Node node, int key) - Deleting a key from BST
+// 2. Node insertAfterTheValue(Node node, int value, int key)
+// 3. Node deleteValue(Node node, int value)
+// 4. int lengthOfLinkedList(Node head)
+// 5. Node sort(Node head)
 
 
 
-
+// Each node skeleton
 class Node
 {
 	int value;
@@ -83,6 +83,7 @@ class LinkedList
 		return node;
 	}
 	
+	// Find the length of the linked list
 	int lengthOfLinkedList(Node head)
 	{
 		int len = 0;
@@ -95,6 +96,7 @@ class LinkedList
 		return len;
 	}
 	
+	// Print the linked list
 	void printLinkedList(Node head)
 	{
 		System.out.println();
@@ -105,6 +107,7 @@ class LinkedList
 		}
 	}
 	
+	// Sort the node is ascending order
 	Node sort(Node head)
 	{
 		Node temp1 = head, temp2 = head;
@@ -126,7 +129,7 @@ class LinkedList
 		return head;
 	}
 	
-	
+	// Function execution begins here
 	public static void main(String[] args)
 	{
 		LinkedList obj = new LinkedList();
