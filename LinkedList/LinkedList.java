@@ -45,6 +45,7 @@ class LinkedList
 		temp.next = node;
 		return temp;
 	}
+	
 	// Insert the value node after the key, if key not present insert at end
 	Node insertAfterTheValue(Node node, int value, int key)
 	{
