@@ -1,9 +1,9 @@
 /************************************************
-*	FileName :  NthElementFromEnd.java
+*	FileName :  RemoveNthElementFromEnd.java
 *	Author	 :  Jegan Gopalakrishnan
 *   Date	 :  Feb 17, 2018
 *************************************************/
-// Return nth element from the end of linkedlist
+// Remove nth element from the end of linkedlist
 // This question is taken from CTCI 
 
 
@@ -25,7 +25,7 @@ class Node
 
 class LinkedList
 {
-	Node head; // starting node of linked list
+	Node head; // starting node of linkedlist
 	
 	// constructor
 	LinkedList()
@@ -57,82 +57,63 @@ class LinkedList
 	// Method to remove nth element from end
 	// Have a second pointer move n-1 position from head.
 	// Now move both pointer until second pointer reaches the end
-	// print the value of current pointer
-	void returnNthElementFromEnd(int n)
+	// Now delete the current pointer
+	void removeNthElementFromEnd(int n)
 	{
 		if(head == null) return;
-		Node current = head, end = head;
+		Node current = head, end = head, prev = head;
 		int dist = n-1;
-		while(dist > 0)
+		while(end != null && dist > 0)
 		{
-			if(end == null)
-			{
-				System.out.println(" \nThe linked list doesn't contain " + n + " elements");
-				return;
-			}
 			end = end.next;
 			dist -= 1;
 		}
-		
+		if(end == null)
+		{
+			System.out.println(" \nThe linked list doesn't contain " + n + " elements");
+			return;
+		}
 		while(end.next !=null)
 		{
+			prev = current;
 			current = current.next;
 			end = end.next;
 		}
-		System.out.println("\n"+n + "th element from end is " + current.data);
-	}
-	
-	//Recursive approach to print the element
-	// recursively pass the next node and return the node index
-	int printNthElementRec(Node node, int n)
-	{
-		if(node == null)
+		if(current == head)
 		{
-			return 0;
+			head = head.next;
 		}
-		int index = printNthElementRec(node.next, n) + 1;
-		if(index == n)
+		else
 		{
-			System.out.println("\n"+n + "th element from end : " +  node.data);
+			prev.next = current.next;
 		}
-		return index;
 	}
 	
 	// Function execution begins here
 	public static void main(String[] args)
 	{
 		LinkedList l = new LinkedList();
-		Random r = new Random();
 		
+		Random r = new Random();
 		for(int i=0; i < 20; i++)
 		{
 			l.add(r.nextInt(100)+1);
 		}
+		
 		l.print();
 		
-		// return first element
-		l.returnNthElementFromEnd(20);
+		// Removing first element
+		l.removeNthElementFromEnd(20);
 		l.print();
-		
 		// Out of range
-		l.returnNthElementFromEnd(25);
+		l.removeNthElementFromEnd(25);
 		l.print();
 		
 		// Some element in middle
-		l.returnNthElementFromEnd(6);
-		l.print();
+		l.removeNthElementFromEnd(6);
+		l.print();		
 		
-		// return first element
-		l.printNthElementRec(l.head,20);
-		l.print();
 		
-		// Out of range
-		l.printNthElementRec(l.head, 25);
-		l.print();
-		
-		// Some element in middle
-		l.printNthElementRec(l.head, 6);
-		l.print();
 	}
 	
 }
