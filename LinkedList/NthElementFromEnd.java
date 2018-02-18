@@ -54,6 +54,10 @@ class LinkedList
 		}
 	}
 	
+	// Method to remove nth element from end
+	// Have a second pointer move n-1 position from head.
+	// Now move both pointer until second pointer reaches the end
+	// Now delete the current pointer
 	void removeNthElementFromEnd(int n)
 	{
 		if(head == null) return;
