@@ -53,6 +53,8 @@ class LinkedList
 		}
 	}
 	
+	// Add the string to stack until the middle of list
+	// and then check them by popping it out
 	boolean isPalindrome()
 	{
 		if(head == null) return false;
