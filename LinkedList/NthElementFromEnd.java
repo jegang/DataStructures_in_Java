@@ -4,7 +4,7 @@
 *   Date	 :  Feb 17, 2018
 *************************************************/
 // Return nth element from the end of linkedlist
-// This question is taken from CTCI 
+// This question is taken from CTCI 2.2
 
 
 import java.util.*;

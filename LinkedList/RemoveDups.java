@@ -4,7 +4,7 @@
 *   Date	 :  Feb 17, 2018
 *************************************************/
 // Remove the duplicate element of the unsorted linked list
-// This question is taken from CTCI 
+// This question is taken from CTCI 2.1
 
 import java.util.*;
 
