@@ -56,6 +56,9 @@ class LinkedList
 		}
 	}
 	
+	// Traverse the current linked list and add the element 
+	// to the beginning if value is less that x or add at the 
+	// end if value is greater than or equal to x
 	void partitionLinkedList(int x)
 	{
 		Node start = null, end = null;
